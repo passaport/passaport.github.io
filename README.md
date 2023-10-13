@@ -1,10 +1,8 @@
-# Personal Resource Page
+### Resources
 
-<h4>Here you will find all my resources that i use int frontend and backend(soon).</h4> 
+Here you can find all resources that i use to make a website using HTML | CSS | JS.
 
-<h3><a href="https://passaport.github.io/">Click here to see the website</a></h3>
-
-### Another Settings
+### Settings
 
 `Auto Save` set to `onFocusChange`, to automatically save files
 
@@ -15,4 +13,3 @@
 `Word Wrap` set to `on`, to avoid vertical scrollbars for long content
 
 `Tab Size` set to `2`, for better code readability
-
