@@ -1,6 +1,10 @@
-### Resources
+### Decription
 
-Here you can find all resources that i use to make a website using HTML | CSS | JS.
+<p>Here you can find all resources that i use to make a website using <em>HTML | CSS | JS</em>.</p>
+
+### Website
+
+<strong>Website shortcut:</strong> <a href="https://passaport.github.io/">Click here</a>
 
 ### Settings
 
