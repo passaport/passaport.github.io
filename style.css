@@ -35,12 +35,14 @@ html {
 }
 
 .secondary-header {
-  font-size: 3.2rem;
+  font-size: 3.1rem;
+  letter-spacing: 0.5px;
   text-align: center;
 }
 
 .ternary-header {
   font-size: 2.4rem;
+  letter-spacing: 0.5px;
   text-align: center;
 }
 
