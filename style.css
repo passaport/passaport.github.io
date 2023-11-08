@@ -1,137 +1,102 @@
-/**********************/
-/* General Style*/
-/**********************/
+/* General settings */
 * {
-  margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  margin: 0;
 }
 
 html {
-  font-size: 10px;
-}
-
-body {
-  font-family: "Lato", sans-serif;
+  font-size: 62.5%;
+  font-family: "Courier New", Courier, monospace;
   color: #333;
+  background-color: #8ec5fc;
+  background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
 }
 
-/**********************/
-/* Header Style*/
-/**********************/
-.main-header {
-  height: 8rem;
+/* Main container */
+
+.main-container {
   display: flex;
+  max-width: 65rem;
+  height: 100vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #f9fafa;
-  padding: 5rem;
+  margin: 0 auto;
+  gap: 3rem;
 }
 
-.main-header-title {
-  font-size: 3rem;
+/* Headers */
+
+.primary-header {
+  font-size: 4.2rem;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: -0.5px;
 }
 
-.main-header-description {
+.secondary-header {
+  font-size: 3.2rem;
+  text-align: center;
+}
+
+.ternary-header {
+  font-size: 2.4rem;
+  text-align: center;
+}
+
+/* Battery Container */
+
+.battery-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.battery-item-big {
+  border-radius: 1rem;
+  width: 15rem;
+  height: 15rem;
+  background: #fff;
+}
+
+.battery-item-small {
+  border-radius: 1rem;
+  width: 5rem;
+  height: 7rem;
+}
+
+.battery-fill {
+  transition: all 0.5s;
+  background: linear-gradient(to right, white 100%, green 0);
+}
+
+/* Main Navigation */
+
+.main-nav-list {
+  display: flex;
+  list-style: none;
+  gap: 5rem;
+}
+
+.main-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 1.8rem;
+  height: 2rem;
+}
+
+.main-nav-item a:link,
+.main-nav-item a:visited {
+  text-decoration: none;
+  font-weight: 500;
+  color: #333;
+  transition: all 0.5s;
+}
+
+.main-nav-item a:hover,
+.main-nav-item a:active {
   font-size: 2rem;
-}
-
-/**********************/
-/* Section Container Style */
-/**********************/
-.section-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  padding: 5rem;
-}
-
-.section-container:nth-child(even) {
-  background-color: #f9fafa;
-}
-
-.section-icon {
-  width: 48px;
-  height: 48px;
-}
-
-.section-title {
-  font-size: 2.6rem;
-  font-weight: 300;
-  letter-spacing: 1px;
-}
-
-/**********************/
-/* Items Styles */
-/**********************/
-.grid-items {
-  width: 80%;
-  display: grid;
-  /* grid-template-columns: repeat(3, 1fr); */
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  row-gap: 5rem;
-  column-gap: 5rem;
-}
-
-.item {
-  width: 70%;
-  display: flex;
-  flex-direction: column;
-  justify-self: center;
-}
-
-.item .item-icon {
-  width: 48px;
-  height: 48px;
-  margin-bottom: 1rem;
-}
-/**********************/
-/* Item elements style */
-/**********************/
-.item a:link,
-.item a:visited {
-  color: #26afeb;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
-  transition: color 0.2s;
-}
-
-.item a:hover,
-.item a:active {
-  color: #ff951f;
-}
-
-.item p {
-  font-size: 1.6rem;
-  line-height: 1.8;
-}
-/**********************/
-/* Footer Style*/
-/**********************/
-.main-footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 4rem;
-  padding: 5rem;
-}
-
-.main-footer-primary-description {
-  font-size: 1.3rem;
-}
-
-.main-footer a:link,
-.main-footer a:visited {
-  text-decoration: none;
-  color: #333;
-  font-size: 1.2rem;
-}
-
-.main-footer-secondary-description {
-  font-weight: 600;
+  font-weight: 700;
+  color: #555;
 }

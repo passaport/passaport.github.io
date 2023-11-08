@@ -1,0 +1,137 @@
+/**********************/
+/* General Style*/
+/**********************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  color: #333;
+}
+
+/**********************/
+/* Header Style*/
+/**********************/
+.main-header {
+  height: 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9fafa;
+  padding: 5rem;
+}
+
+.main-header-title {
+  font-size: 3rem;
+}
+
+.main-header-description {
+  font-size: 2rem;
+}
+
+/**********************/
+/* Section Container Style */
+/**********************/
+.section-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 5rem;
+}
+
+.section-container:nth-child(even) {
+  background-color: #f9fafa;
+}
+
+.section-icon {
+  width: 48px;
+  height: 48px;
+}
+
+.section-title {
+  font-size: 2.6rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+/**********************/
+/* Items Styles */
+/**********************/
+.grid-items {
+  width: 80%;
+  display: grid;
+  /* grid-template-columns: repeat(3, 1fr); */
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  row-gap: 5rem;
+  column-gap: 5rem;
+}
+
+.item {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+}
+
+.item .item-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1rem;
+}
+/**********************/
+/* Item elements style */
+/**********************/
+.item a:link,
+.item a:visited {
+  color: #26afeb;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  transition: color 0.2s;
+}
+
+.item a:hover,
+.item a:active {
+  color: #ff951f;
+}
+
+.item p {
+  font-size: 1.6rem;
+  line-height: 1.8;
+}
+/**********************/
+/* Footer Style*/
+/**********************/
+.main-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
+  padding: 5rem;
+}
+
+.main-footer-primary-description {
+  font-size: 1.3rem;
+}
+
+.main-footer a:link,
+.main-footer a:visited {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.main-footer-secondary-description {
+  font-weight: 600;
+}
