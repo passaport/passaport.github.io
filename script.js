@@ -1,36 +1,22 @@
-const batteryItems = document.querySelectorAll(".battery-fill");
-const animationDelay = 1000;
+const batteryItems = [
+  ...document.querySelectorAll(".battery-item-big"),
+  ...document.querySelectorAll(".battery-item-small"),
+];
 
-function delay(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
-async function runAnimation() {
-  while (true) {
-    for (const item of batteryItems) {
-      item.style.background = "white";
-    }
-    await delay(animationDelay);
-
-    for (const item of batteryItems) {
-      changeBackground(item);
-      await delay(animationDelay);
-    }
+async function FillBattery() {
+  for (const item of batteryItems) {
+    item.style.background = "white";
   }
-}
 
-function changeBackground(element) {
-  let width = 0;
-
-  function animate() {
-    width++;
-    if (width <= 100) {
-      element.style.background = `linear-gradient(90deg, green ${width}%, white 100%)`;
-      requestAnimationFrame(animate);
+  for (let index = 0; index < batteryItems.length; index++) {
+    const element = batteryItems[index];
+    for (procent = 0; procent <= 100; procent += 10) {
+      element.style.background = `linear-gradient(90deg, green ${procent}%, white 0%)`;
+      await new Promise((r) => setTimeout(r, 500));
     }
   }
 
-  animate();
+  requestAnimationFrame(FillBattery);
 }
 
-runAnimation();
+FillBattery();
