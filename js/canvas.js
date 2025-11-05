@@ -7,6 +7,8 @@ import Scene3D from './scenes/3D/scene3D.js';
 
 // Represents the application canvas.
 export default class Canvas {
+  /** @type {HTMLElement} */
+  #loadingOverlay;
   /** @type {HTMLCanvasElement} */
   #canvasElement;
   /** @type {Scene} */
@@ -23,9 +25,10 @@ export default class Canvas {
   /**
    * Class constructor.
    */
-  constructor(canvasElement) {
+  constructor(canvasElement, loadingOverlay) {
     // Get the dependencies.
     this.#canvasElement = canvasElement;
+    this.#loadingOverlay = loadingOverlay;
   }
 
   /**
@@ -43,6 +46,10 @@ export default class Canvas {
       return;
     }
 
+    // Apply the loading overlay.
+    this.#loadingOverlay.classList.remove('fade-transition');
+    this.#loadingOverlay.classList.remove('loading-hidden');
+
     // Create the scene.
     this.#scene = new Scene3D(this);
 
@@ -54,6 +61,13 @@ export default class Canvas {
 
     // Executes the first update loop.
     this.#update(1);
+
+    // Hide the loading overlay.
+    // We will apply a 1s delay to make sure the all scene resources are loaded.
+    setTimeout(() => {
+      this.#loadingOverlay.classList.add('fade-transition');
+      this.#loadingOverlay.classList.add('loading-hidden');
+    }, 1000);
 
     // Log the message.
     console.log('The canvas has been initialized successfully.');

@@ -9,9 +9,10 @@ import Canvas from './canvas.js';
 async function init() {
   // Gets the canvas element.
   const canvasElement = document.getElementById('canvas');
+  const loadingOverlay = document.getElementById('loading-overlay');
 
   // Instantiate the canvas.
-  const canvas = new Canvas(canvasElement);
+  const canvas = new Canvas(canvasElement, loadingOverlay);
 
   // Initialize the canvas.
   await canvas.initAsync();
