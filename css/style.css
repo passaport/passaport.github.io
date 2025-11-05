@@ -1,0 +1,31 @@
+@import url(libs/bootstrap/bootstrap.css);
+@import url(libs/bootstrap/bootstrap-icons.css); /* Bootstrap Icons. */
+@import url(font-styles.css); /* Font styles. */
+@import url(theme-styles.css); /* Override the bootstrap colors. */
+
+html,
+body {
+  font: 400 14px / 20px Roboto, Helvetica Neue, sans-serif;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+body > div {
+  height: 100%;
+}
+
+#loading-overlay {
+  background: linear-gradient(to bottom, #111 0%, #222 100%);
+  z-index: 20;
+  opacity: 1;
+  pointer-events: all;
+}
+#loading-overlay.fade-transition {
+  transition: opacity 1s ease-in-out;
+}
+
+#loading-overlay.loading-hidden {
+  opacity: 0;
+  pointer-events: none;
+}

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zinnox - Portfolio</title>
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="assets/images/favicon.ico" rel="icon" />
+  </head>
+  <body>
+    <!-- Container -->
+    <div class="container-fluid p-0 g-0 m-0 d-flex flex-column vh-100">
+      <!-- Header-->
+      <nav class="navbar navbar-expand-lg text-white px-4 py-3" style="background-color: #1d546c">
+        <div class="container-fluid">
+          <!-- Portfolio Title -->
+          <a class="navbar-brand d-flex align-items-center text-white" href="#" style="letter-spacing: 2px">
+            <!-- Logo -->
+            <img src="assets/images/logo.png" alt="Logo" class="me-2" style="height: 40px; width: 40px; object-fit: contain" />
+
+            <!-- Text -->
+            <div>
+              <div class="fw-bold fs-5">Zinnox</div>
+              <div class="fs-6 fw-normal" style="letter-spacing: 1px">Software Developer</div>
+            </div>
+          </a>
+
+          <!-- Toggle button -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navigationMenu"
+            aria-controls="navigationMenu"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Navigation Container -->
+          <div id="navigationMenu" class="collapse navbar-collapse justify-content-end fs-5">
+            <ul class="navbar-nav gap-lg-5 gap-3">
+              <li class="nav-item">
+                <a class="nav-link text-light fs-4 fst-italic fw-medium" href="#" data-bs-toggle="modal" data-bs-target="#aboutModal">
+                  <i class="bi bi-person-fill me-2"></i> About
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light fs-4 fst-italic fw-medium" href="#" data-bs-toggle="modal" data-bs-target="#experienceModal">
+                  <i class="bi bi-briefcase-fill me-2"></i> Experience
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light fs-4 fst-italic fw-medium" href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal">
+                  <i class="bi bi-folder-fill me-2"></i> Portfolio
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light fs-4 fst-italic fw-medium" href="#" data-bs-toggle="modal" data-bs-target="#contactModal">
+                  <i class="bi bi-envelope-fill me-2"></i> Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Body -->
+      <div class="position-relative d-flex flex-grow-1">
+        <!-- GUI -->
+        <div id="gui-container" class="position-absolute end-0 top-0 m-4"></div>
+
+        <!-- Canvas -->
+        <canvas id="canvas" class="w-100 h-100"></canvas>
+
+        <!-- Fade overlay -->
+        <div
+          id="loading-overlay"
+          class="position-absolute top-0 start-0 w-100 h-100 d-flex gap-5 flex-column justify-content-center align-items-center loading-hidden overflow-hidden"
+        >
+          <!-- Loading Message -->
+          <span class="text-white display-1 fw-bold fst-italic mb-5">Loading...</span>
+
+          <!-- Spinner -->
+          <div class="text-info text-center position-relative">
+            <!-- Spinner Image -->
+            <div class="spinner-grow text-primary" style="width: 8rem; height: 8rem" role="status"></div>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div id="stats-container" class="position-absolute start-0 bottom-0 ms-3" style="margin-bottom: 3%"></div>
+
+        <!-- Modals -->
+        <div id="modals-container">
+          <!-- About Modal -->
+          <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl mx-auto" style="margin-top: 100px">
+              <div class="modal-content text-light p-4 rounded-4 shadow-lg overflow-y-auto" style="max-height: calc(100vh - 150px)">
+                <div class="modal-header border-bottom border-secondary mb-4">
+                  <h4 class="modal-title fs-2 fw-bold" id="aboutModalLabel">👋 Hey there! I'm Zinnox</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="background-color: white"></button>
+                </div>
+                <!-- Modal body-->
+                <div class="modal-body px-4 py-1 fs-6">
+                  <div class="text-center mb-4">
+                    <img src="./assets/images/modal-about.gif" alt="Funny cat" class="img-fluid rounded-3 shadow" style="max-height: 300px; object-fit: cover; width: 100%" />
+                  </div>
+
+                  <!-- Section separator-->
+                  <hr class="my-2 border-secondary opacity-50" />
+
+                  <!-- Section 1 -->
+                  <section class="mb-4">
+                    <h5 class="fw-semibold fs-4 mb-3">💡 Passionate &amp; Curiosity-Driven</h5>
+                    <p>Ever since I was a kid, I’ve been obsessed with figuring out <em>how things work</em>.</p>
+                    <p>🔍 — from taking apart toys (sorry mom) to building robots 🤖 and designing games 🎮.</p>
+                    <p>Coding started as a curiosity, grew into a passion, and eventually became both my profession and my favorite hobby.</p>
+                    <p>That “aha!” moment when something clicks — whether it's a bug fix at 3AM ☕ or a feature that just <em>feels</em> right — never gets old.</p>
+                  </section>
+
+                  <hr class="my-4 border-secondary opacity-50" />
+
+                  <!-- Section 2 -->
+                  <section class="mb-4">
+                    <h5 class="fw-semibold fs-4 mb-3">🔥 What I love creating</h5>
+                    <ul class="list-unstyled ps-3">
+                      <li class="mb-2">🎮 Interactive games that tell immersive stories and stir emotions.</li>
+                      <li class="mb-2">🧠 Projects where code and electronics breathe life into ideas.</li>
+                      <li class="mb-2">🚀 Exploring new tech — from Unity, Blender, and Godot to AI tools.</li>
+                    </ul>
+                  </section>
+
+                  <hr class="my-4 border-secondary opacity-50" />
+
+                  <!-- Section 3 -->
+                  <section class="mb-4">
+                    <h5 class="fw-semibold fs-4 mb-3">🌱 Always growing</h5>
+                    <p>I’m the kind of person who watches dev tutorials on YouTube <em>just for fun</em> 🤓.</p>
+                    <p>I love tinkering with microcontrollers, Raspberry Pi setups, and anything that lights up, moves, or can be programmed.</p>
+                    <p>
+                      One of my biggest dreams is to finally finish and publish a game. I’ve started many, but perfectionism held me back — I didn’t want to disappoint the people
+                      who might play them. That’s something I’m working on now: learning to finish, not just start.
+                    </p>
+                    <p class="fst-italic">My motto? <strong>“Build fast, break things, fix smarter.”</strong></p>
+                  </section>
+
+                  <hr class="my-4 border-secondary opacity-50" />
+
+                  <!-- Section 4 -->
+                  <section>
+                    <h5 class="fw-semibold fs-4 mb-3">🧩 Fun facts about me</h5>
+                    <ul class="list-unstyled ps-3">
+                      <li class="mb-2">🎥 I’m an anime fan — especially into fantasy and time-travel shows like Sword Art Online, Naruto, One Piece, and Bleach.</li>
+                      <li class="mb-2">👻 Big fan of horror video games and pixel art aesthetics.</li>
+                      <li class="mb-2">🎧 Favorite coding vibe? Lo-fi beats + Studio Ghibli soundtracks.</li>
+                    </ul>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience Modal -->
+          <div class="modal fade" id="experienceModal" tabindex="-1" aria-labelledby="experienceModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl mx-auto" style="margin-top: 100px">
+              <div class="modal-content text-light p-4 rounded-4 shadow-lg overflow-y-auto" style="max-height: calc(100vh - 150px)">
+                <!-- Header -->
+                <div class="modal-header border-bottom border-secondary">
+                  <h5 class="modal-title fs-3 fw-bold" id="experienceModalLabel">🚀 My Experience</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="background-color: white"></button>
+                </div>
+
+                <!-- Body -->
+                <div class="modal-body p-4">
+                  <!-- GIF Header -->
+                  <div class="mb-4">
+                    <img src="./assets/images/modal-experience.gif" alt="Coding Experience" class="img-fluid w-100 rounded shadow" style="max-height: 280px; object-fit: cover" />
+                  </div>
+
+                  <hr class="border-secondary opacity-50" />
+
+                  <!-- Skill Categories -->
+                  <div class="row gy-5 text-start">
+                    <!-- Backend -->
+                    <div class="col-md-5">
+                      <h4 class="text-info mb-4">🛠️ Backend Development</h4>
+
+                      <div class="d-flex flex-column gap-2 mb-3">
+                        <strong><i class="bi bi-code-slash"></i> ASP.NET Core</strong>
+                        <p class="mb-1">
+                          Developed RESTful APIs with JWT authentication, custom middlewares, and database integration. Experienced with API versioning, validation, and DI.
+                        </p>
+                      </div>
+
+                      <div class="d-flex flex-column gap-2 mb-3">
+                        <strong><i class="bi bi-plug"></i> gRPC</strong>
+                        <p class="mb-1">Utilized gRPC for fast communication between microservices in event-driven architectures.</p>
+                      </div>
+
+                      <div class="d-flex flex-column gap-2 mb-3">
+                        <strong><i class="bi bi-database"></i> Databases – EF Core, Dapper, MongoDB, MySQL, PostgreSQL</strong>
+                        <p class="mb-1">Skilled in relational and NoSQL databases. Efficient data modeling, migrations, queries, and performance tuning.</p>
+                      </div>
+                    </div>
+
+                    <!-- Frontend -->
+                    <div class="col-md-5 offset-md-1">
+                      <h4 class="text-info mb-4">🎨 Frontend Development</h4>
+
+                      <div class="d-flex flex-column gap-2 mb-3">
+                        <strong><i class="bi bi-layout-text-sidebar-reverse"></i> Blazor (WASM & Server)</strong>
+                        <p class="mb-1">Created reactive UI components with two-way binding, routing, and service injection.</p>
+                      </div>
+
+                      <div class="d-flex flex-column gap-2 mb-3">
+                        <strong><i class="bi bi-code"></i> HTML &amp; CSS</strong>
+                        <p class="mb-1">Semantic markup, responsive layouts with Flexbox and Grid, animations, and accessibility.</p>
+                      </div>
+
+                      <div class="d-flex flex-column gap-2 mb-3">
+                        <strong><i class="bi bi-bootstrap-fill"></i> Bootstrap</strong>
+                        <p class="mb-1">Rapid prototyping and design consistency with utility classes and custom theming.</p>
+                      </div>
+
+                      <div class="d-flex flex-column gap-2 mb-3">
+                        <strong><i class="bi bi-unity"></i> Unity</strong>
+                        <p class="mb-1">Basic experience in game development, scene setup, and C# scripting for interactive games.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- DevOps & Tools -->
+                  <hr class="my-3 border-secondary opacity-50" />
+                  <section>
+                    <h4 class="text-info mb-4">🧰 Tools & DevOps</h4>
+                    <div class="row text-light fs-6">
+                      <div class="col-md-4 d-flex align-items-center mb-3"><i class="bi bi-git me-2 fs-5"></i> Git &amp; GitHub</div>
+                      <div class="col-md-4 d-flex align-items-center mb-3"><i class="bi bi-github me-2 fs-5"></i> GitHub Actions (CI/CD)</div>
+                      <div class="col-md-4 d-flex align-items-center mb-3"><i class="bi bi-box-seam me-2 fs-5"></i> Docker &amp; Containerization</div>
+                      <div class="col-md-4 d-flex align-items-center mb-3"><i class="bi bi-cloud me-2 fs-5"></i> Microsoft Azure</div>
+                      <div class="col-md-4 d-flex align-items-center mb-3"><i class="bi bi-postman me-2 fs-5"></i> Postman &amp; Swagger</div>
+                      <div class="col-md-4 d-flex align-items-center mb-3"><i class="bi bi-gear-wide-connected me-2 fs-5"></i> REST APIs &amp; WebSockets</div>
+                      <div class="col-md-4 d-flex align-items-center mb-3"><i class="bi bi-figma me-2 fs-5"></i> Figma (UI/UX)</div>
+                      <div class="col-md-4 d-flex align-items-center mb-3"><i class="bi bi-blender me-2 fs-5"></i> Blender</div>
+                      <div class="col-md-4 d-flex align-items-center mb-3"><i class="bi bi-blender me-2 fs-5"></i> ...</div>
+                    </div>
+                  </section>
+
+                  <!-- Summary -->
+                  <hr class="my-5 border-secondary opacity-50" />
+                  <section>
+                    <p class="text-warning fst-italic text-center fs-5">
+                      "I’m constantly evolving my skills, exploring new technologies, and building projects that challenge me to grow." 🚀
+                    </p>
+                    <p class="text-muted fst-italic text-center mt-3 fs-6">
+                      *Perfection isn't the goal — technology moves fast, and there’s always something new to learn. That’s the excitement of this craft.* 🌱
+                    </p>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Portfolio Modal -->
+          <div class="modal fade" id="portfolioModal" tabindex="-1" aria-labelledby="portfolioModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl mx-auto" style="margin-top: 100px">
+              <div class="modal-content text-light p-4 rounded-4 shadow-lg overflow-y-auto" style="max-height: calc(100vh - 150px)">
+                <div class="modal-header border-bottom border-secondary mb-4">
+                  <h4 class="modal-title fs-2 fw-bold" id="portfolioModalLabel">🎨 My Portfolio</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="background-color: white"></button>
+                </div>
+
+                <div class="modal-body px-4 py-2 fs-6">
+                  <!-- Intro -->
+                  <section class="mb-4">
+                    <p>Most of my previous projects were developed for companies under confidentiality agreements, so I can’t publicly showcase them.</p>
+                    <p>However, those experiences have shaped my skills in working on real-world, production-ready systems — from internal tools to interactive applications.</p>
+                  </section>
+
+                  <hr class="my-4 border-secondary opacity-50" />
+
+                  <!-- Project -->
+                  <section class="mb-4">
+                    <h5 class="fw-semibold fs-4 mb-3">🕹️ Currently Working On: My First Indie Game</h5>
+                    <p>I’m currently developing a personal indie game — a passion project where I can truly express my creativity.</p>
+                    <p>It combines my love for storytelling, anime, and immersive gameplay mechanics.</p>
+                    <p>
+                      While it's still in early development, I'm committed to finishing and releasing this project — something I’ve always aimed for, but often postponed due to
+                      perfectionism.
+                    </p>
+
+                    <div class="text-center mt-3">
+                      <img
+                        src="./assets/images/modal-portofolio.gif"
+                        alt="Game development preview"
+                        class="img-fluid rounded-3 shadow"
+                        style="max-height: 300px; object-fit: cover; width: 100%"
+                      />
+                      <p class="text-muted mt-2 fst-italic">*Sneak peek — full preview coming soon!*</p>
+                    </div>
+                  </section>
+
+                  <hr class="my-4 border-secondary opacity-50" />
+
+                  <!-- Outro -->
+                  <section>
+                    <p>If you're curious to know more about my work, development process, or the tools I use — feel free to reach out!</p>
+                    <p>I'm always open to sharing insights and connecting with fellow devs and creatives 🚀.</p>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Modal -->
+          <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl mx-auto" style="margin-top: 100px">
+              <div class="modal-content text-light p-4 rounded-4 shadow-lg overflow-y-auto" style="max-height: calc(100vh - 150px)">
+                <div class="modal-header border-bottom border-secondary mb-4">
+                  <h2 class="modal-title fs-2 fw-bold" id="contactModalLabel">📬 Get in Touch</h2>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="background-color: white"></button>
+                </div>
+
+                <div class="modal-body py-4 px-5 fs-6">
+                  <!-- Contact information -->
+                  <section class="mb-5">
+                    <h5 class="text-info mb-4 fs-4 fw-semibold">📞 Contact Info</h5>
+                    <ul class="list-unstyled fs-5">
+                      <li class="mb-3">
+                        <strong>Email:</strong>
+                        <a href="mailto:danvaly21@gmail.com" class="text-success text-decoration-none" aria-label="Send email to danvaly21@gmail.com">danvaly21@gmail.com</a>
+                      </li>
+                      <li class="mb-3">
+                        <strong>Location:</strong>
+                        <span class="text-muted">Romania, Remote-friendly 🌍</span>
+                      </li>
+                    </ul>
+                  </section>
+
+                  <!-- Social media -->
+                  <section class="mb-5">
+                    <h5 class="text-info mb-4 fs-4 fw-semibold">🌐 Social Links</h5>
+                    <div class="d-flex gap-4 flex-wrap justify-content-center">
+                      <a href="https://github.com/passaport" target="_blank" class="btn btn-outline-light btn-lg d-flex align-items-center gap-2 px-4" aria-label="GitHub">
+                        <i class="bi bi-github fs-3"></i> GitHub
+                      </a>
+                      <a
+                        href="https://www.linkedin.com/in/dan-valentin/"
+                        target="_blank"
+                        class="btn btn-outline-primary btn-lg d-flex align-items-center gap-2 px-4"
+                        aria-label="LinkedIn"
+                      >
+                        <i class="bi bi-linkedin fs-3"></i> LinkedIn
+                      </a>
+                    </div>
+                  </section>
+
+                  <!-- Personal touch -->
+                  <section class="mt-5 text-center text-muted fst-italic fs-5">
+                    <p>Feel free to reach out anytime – I’m always up for interesting projects, feedback, or just to chat about tech and anime! 🍥💻</p>
+                    <img src="./assets/images/modal-contact.gif" alt="Anime Wave" class="img-fluid rounded mx-auto d-block mt-3" style="max-width: 140px" loading="lazy" />
+                  </section>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js" type="module"></script>
+  </body>
+</html>
